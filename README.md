@@ -48,6 +48,15 @@ Docker Runtime Interface installation
   sudo systemctl enable cri-docker.service
   sudo systemctl enable --now cri-docker.socket
 ```
+Modify Host File
+```
+hostname
+hostnamectl set-hostname master >>> change host name to master
+vi /etc/hosts
+#add master and worker private ip and name lie
+#172.31.41.1 master
+#172.31.37.186 worker
+```
 Disable swap partition 
 ```bash
   sudo swapoff -a
