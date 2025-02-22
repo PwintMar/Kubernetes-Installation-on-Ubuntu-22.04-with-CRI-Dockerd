@@ -50,8 +50,8 @@ Docker Runtime Interface installation
 ```
 Modify Host File
 ```
-hostname
-hostnamectl set-hostname master >>> change host name to master
+hostname #check your current hostname
+hostnamectl set-hostname master # change host name to master
 vi /etc/hosts
 #add master and worker private ip and name lie
 #172.31.41.1 master
