@@ -63,7 +63,11 @@ Disable swap partition
 ```
 Kubeadm installation
 #https://v1-31.docs.kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/
-
+```bash
+   systemctl status ufw
+   systemctl stop ufw
+   systemctl disable ufw
+```
 ```bash
   #curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.28/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
   # If the directory `/etc/apt/keyrings` does not exist, it should be created before the curl command, read the note below.
