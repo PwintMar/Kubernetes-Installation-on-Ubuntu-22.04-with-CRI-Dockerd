@@ -1,3 +1,4 @@
+#To set static network ip : https://linuxconfig.org/setting-a-static-ip-address-in-ubuntu-24-04-via-the-command-line
 # Kubernetes-Installation-on-Ubuntu-22.04-with-CRI-Dockerd
 
 
