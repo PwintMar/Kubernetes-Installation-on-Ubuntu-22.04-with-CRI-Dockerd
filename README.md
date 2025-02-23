@@ -105,14 +105,17 @@ EOF
 # Apply sysctl params without reboot
 sudo sysctl --system
 
-```bash
-  sudo apt-mark hold docker-ce kubelet kubeadm kubectl #Mandatory to hold before initialize
-```
+
 
 ```
 Initialize the Master Node
 ```bash
+  sudo apt-mark hold docker-ce kubelet kubeadm kubectl #Mandatory to hold before initialize
+  sudo systemctl status kubelet
+  #If not run this
+  sudo systemctl enable --now kubelet
   sudo kubeadm init --apiserver-advertise-address=<control_plane_ip> --cri-socket unix:///var/run/cri-dockerd.sock  --pod-network-cidr=192.168.0.0/16
+  #sudo kubeadm init --apiserver-advertise-address=192.168.1.9 --cri-socket unix:///var/run/cri-dockerd.sock  --pod-network-cidr=192.168.0.0/16
 ```
 ```bash
   # Copy your join command and keep it safe.
