@@ -24,8 +24,15 @@ chmod +x install-docker.sh
   sudo usermod -aG docker $USER
   #Log out and log back in so that your group membership is re-evaluated
 ```
-
-
+Modify Host File
+```
+hostname #check your current hostname
+hostnamectl set-hostname master # change host name to master
+cat /etc/hosts
+#add master and worker private ip and name lie
+#172.31.41.1 master
+#172.31.37.186 worker
+```
 Docker Runtime Interface installation
 
 ```bash
@@ -54,15 +61,7 @@ Docker Runtime Interface installation
   sudo systemctl start cri-docker.service
   sudo systemctl enable cri-docker.service
   sudo systemctl enable --now cri-docker.socket
-```
-Modify Host File
-```
-hostname #check your current hostname
-hostnamectl set-hostname master # change host name to master
-vi /etc/hosts
-#add master and worker private ip and name lie
-#172.31.41.1 master
-#172.31.37.186 worker
+
 ```
 Disable swap partition 
 ```bash
