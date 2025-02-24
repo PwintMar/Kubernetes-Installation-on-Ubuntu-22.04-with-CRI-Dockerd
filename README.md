@@ -94,7 +94,7 @@ Kubeadm installation
   sudo apt-get install -y kubelet kubeadm kubectl
 ```
 ```bash
-  sudo apt-mark hold docker-ce kubelet kubeadm kubectl #Not sure two times and need to test again
+  sudo apt-mark hold kubelet kubeadm kubectl #Not sure two times and need to test again
 ```
 ```bash
 cat <<EOF | sudo tee /etc/modules-load.d/k8s.conf
@@ -120,7 +120,7 @@ sudo sysctl --system
 ```
 Initialize the Master Node
 ```bash
-  sudo apt-mark hold docker-ce kubelet kubeadm kubectl #Mandatory to hold before initialize
+  sudo apt-mark hold kubelet kubeadm kubectl #Mandatory to hold before initialize
   sudo systemctl status kubelet
   #If not run this
   sudo systemctl enable --now kubelet
