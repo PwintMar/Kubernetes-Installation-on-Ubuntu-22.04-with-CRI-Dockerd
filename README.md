@@ -10,6 +10,12 @@ Docker Installation
 ```
 ```bash
   sudo curl https://get.docker.com | bash
+#if above cannot
+###please make sure to be same place for all installation
+curl -fsSL https://get.docker.com -o install-docker.sh
+chmod +x install-docker.sh
+./install-docker.sh
+####
 ```
 ```bash
    sudo groupadd docker
