@@ -66,10 +66,13 @@ Docker Runtime Interface installation
 Disable swap partition 
 ```bash
   sudo swapoff -a
+#to check at file
+
 ```
 Kubeadm installation
 #https://v1-31.docs.kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/
 ```bash
+#stop and disable firewall for not suring which port will use
    systemctl status ufw
    systemctl stop ufw
    systemctl disable ufw
@@ -167,4 +170,14 @@ Joining the node to the cluster:
 If the joining code is lost, it can retrieve using below command
 ```bash
   kubeadm token create --print-join-command
+```
+
+Notes
+```bash
+#to check error
+sudo journalctl -xu kubelet.service
+apt/apt-get clean #cleans the packages and install script in /var/cache/apt/archives/
+apt/apt-get autoclean #cleans obsolete deb-packages, less than clean
+apt/apt-get autoremove #removes orphaned packages which are not longer needed from the system, but not purges them, use the --purge option together with the command for that.
+systemctl --type=service --state=running
 ```
