@@ -130,11 +130,17 @@ Initialize the Master Node
   sudo kubeadm init --apiserver-advertise-address=<control_plane_ip> --cri-socket unix:///var/run/cri-dockerd.sock  --pod-network-cidr=192.168.0.0/16
   #sudo kubeadm init --apiserver-advertise-address=192.168.1.9 --cri-socket unix:///var/run/cri-dockerd.sock  --pod-network-cidr=192.168.0.0/16
 ```
+Master Token create
+```bash
+kubeadm token create --print-join-command
+```
 ```bash
   # Copy your join command and keep it safe.
   kubeadm join 10.0.0.4:6443 --token 7lf2k2.jju8o1n1d04qv5pq \
 	--discovery-token-ca-cert-hash sha256:e420f8f8b5e1feb646a5725ad6867fe519e1862c7494d31acbbb9e95caa75ed1
-
+```
+From Worker
+```bash
     # Add --cri-socket /var/run/cri-dockerd.sock to the command
 kubeadm join <control_plane_ip>:6443 --token 31rvbl.znk703hbelja7qbx --cri-socket unix:///var/run/cri-dockerd.sock --discovery-token-ca-cert-hash sha256:3dd5f401d1c86be4axxxxxxxxxx61ce965f5xxxxxxxxxxf16cb29a89b96c97dd
 
